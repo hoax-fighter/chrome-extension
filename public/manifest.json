@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "short_name": "Hoax Fighter",
+  "name": "Hoax Fighter",
+  "version": "0.0.0",
+  "description": "Hoax Fighter chrome extension",
+  "icons": {
+    "128": "logo_small.png"
+  },
+  "browser_action": {
+    "default_icon": "logo_small.png",
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "activeTab",
+    "http://*/*",
+    "https://*/*",
+    "tabs"
+  ]
+}
