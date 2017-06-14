@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "short_name": "Hoax Fighter",
-  "name": "Hoax Fighter",
+  "short_name": "LIE",
+  "name": "Logical Information E-dentification",
   "version": "0.0.0",
-  "description": "Hoax Fighter chrome extension",
+  "description": "Logical Information E-dentification",
   "icons": {
     "128": "logo_small.png"
   },
