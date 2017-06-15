@@ -15,7 +15,7 @@ export const addUserInput = (userInput) => {
   const input = { input: userInput }
   return (dispatch) => {
     dispatch(addUserInputStart())
-    axios.post('http://localhost:3002/api/check', input)
+    axios.post('http://hoax-fighter-backend-dev.ap-southeast-1.elasticbeanstalk.com/api/check', input)
       .then(res => {
         dispatch(addUserInputSuccess(res.data))
       })

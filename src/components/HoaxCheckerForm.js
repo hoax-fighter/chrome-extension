@@ -14,7 +14,6 @@ class HoaxCheckerForm extends React.Component {
 
     onUserSubmit(e) {
         e.preventDefault();
-        // alert('a')
         this.props.addUserInput(this.state.userInput)
     }
 
@@ -27,32 +26,41 @@ class HoaxCheckerForm extends React.Component {
 
     render() {
         console.log('data', this.props.hoaxResult)
-        return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-sm-12">
-                        <form className="text-center" onSubmit={e => this.onUserSubmit(e)}>
-                            <div className="form-group">
-                                Check Hoax News
-                                <textarea
-                                    className="form-control"
-                                    name="userInput"
-                                    rows="3"
-                                    onChange={this.handleChange.bind(this)}
-                                    placeholder="Hasil akan lebih baik jika konten berisi lebih banyak detail (misal: lebih dari dua kalimat)..."
-                                    required></textarea>
-                            </div>
-                            <button className="btn btn-primary"><i className="fa fa-search"></i> Search</button>
-                        </form>
-                    </div>
+        if (this.props.loading) {
+            return (
+                <div className="container text-center">
+                    <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                    <span className="sr-only">Loading...</span>
                 </div>
-                <hr />
+            )
 
-                <SearchResult hoaxResult={this.props.hoaxResult} />
+        } else {
+            return (
+                <div className="container">
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <form className="text-center" onSubmit={e => this.onUserSubmit(e)}>
+                                <div className="form-group">
+                                    Check Hoax News
+                                <textarea
+                                        className="form-control"
+                                        name="userInput"
+                                        rows="3"
+                                        onChange={this.handleChange.bind(this)}
+                                        placeholder="Hasil akan lebih baik jika konten berisi lebih banyak detail (misal: lebih dari dua kalimat)..."
+                                        required></textarea>
+                                </div>
+                                <button className="btn btn-primary"><i className="fa fa-search"></i> Search</button>
+                            </form>
+                        </div>
+                    </div>
+                    <hr />
 
-            </div>
-        )
+                    <SearchResult hoaxResult={this.props.hoaxResult} />
 
+                </div>
+            )
+        }
     }
 
 
